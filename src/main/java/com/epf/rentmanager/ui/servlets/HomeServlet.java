@@ -25,6 +25,6 @@ public class HomeServlet extends HttpServlet{
 		PrintWriter out = response.getWriter();
         out.println("Sum is: " + 1);
         out.println("Average is: " + 1);*/
-			}
+	}
 
 }
