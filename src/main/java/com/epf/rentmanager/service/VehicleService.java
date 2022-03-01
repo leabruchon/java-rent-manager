@@ -22,15 +22,27 @@ public class VehicleService {
 		this.vehicleDao = vehicleDao;
 	}
 	
-	/*public long create(Vehicle vehicle) throws ServiceException {
+	public long create(Vehicle vehicle) throws ServiceException {
 		// TODO: créer un véhicule
-		
+		try {
+			return this.vehicleDao.create(vehicle);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
-	public Vehicle findById(long id) throws ServiceException {
+	public Vehicle findById(int id) throws ServiceException {
 		// TODO: récupérer un véhicule par son id
-		
-	}*/
+		try {
+			return this.vehicleDao.findById(id).get();
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	public List<Vehicle> findAll() throws ServiceException {
 		// TODO: récupérer tous les clients

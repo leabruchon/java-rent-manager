@@ -30,11 +30,20 @@ public class ClientService {
 			e.printStackTrace();
 		}
 		return 0;
-		
+	}
+	
+	public long delete(Client client) throws ServiceException{
+		// TODO: créer un client
+		try {
+			return this.clientDao.delete(client);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
 	}
 	
 	
-
 	public Client findById(int id) throws ServiceException {
 		// TODO: récupérer un client par son id
 		

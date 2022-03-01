@@ -1,6 +1,7 @@
 package com.epf.rentmanager.ui.servlets;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -40,8 +41,21 @@ public class ClientListServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 			request.getRequestDispatcher("./WEB-INF/views/users/list.jsp").forward(request, response);
-	}
+	}	
 	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+			Client client = new Client(Integer.parseInt(request.getParameter("id")), ""  ,"" ,"",null );
+			try {
+				clientService.delete(client);
+			} catch (ServiceException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println();
+			
+                
+        doGet(request, response);
+    }
 }

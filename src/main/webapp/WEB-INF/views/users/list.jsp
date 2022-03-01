@@ -42,18 +42,25 @@
                                         <td>${user.email}</td>
                                         <td>${user.naissance}</td>
                                         <td>
-                                            <a class="btn btn-primary enabled" href="users/details">
-                                                <i class="fa fa-info-circle"></i>
-                                            </a>
-                                            <!--
-                                            <a class="btn btn-success disabled" href="#">
-                                                <i class="fa fa-edit"></i>
-                                            </a>-->
                                             
-                                            <a class="btn btn-danger enabled" href="users/delete">
-                                                <input type="hidden" name="mydata" value="${user.id}">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
+                                            
+                                            
+                                            
+                                            <form class="form-horizontal" method="POST" action="./users">
+                                                <a class="btn btn-primary enabled" href="users/details">
+                                                    <i class="fa fa-info-circle"></i>
+                                                </a>
+
+                                                <a class="btn btn-success enabled" href="users/update">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+
+                                                <button type = "submit" class="btn btn-danger enabled">
+                                                    <input type="hidden" id="id" name="id" value="${user.id}">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                            
                                         </td> 
                                     </tr>
                                 </c:forEach>
