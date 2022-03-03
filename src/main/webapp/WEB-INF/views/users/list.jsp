@@ -1,4 +1,5 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <%@include file="/WEB-INF/views/common/head.jsp"%>
@@ -41,20 +42,24 @@
                                         <td>${user.prenom}</td>
                                         <td>${user.email}</td>
                                         <td>${user.naissance}</td>
-                                        <td>
+                                        <td style = "display: flex; flex-direction: row;">
                                             
                                             
-                                            
-                                            
-                                            <form class="form-horizontal" method="POST" action="./users">
-                                                <a class="btn btn-primary enabled" href="users/details">
+                                            <form class="form-horizontal" method="POST" action="./users/details" style = "padding: 2px">
+                                                <button type = "submit" class="btn btn-primary enabled">
+                                                    <input type="hidden" id="id" name="id" value="${user.id}">
                                                     <i class="fa fa-info-circle"></i>
-                                                </a>
-
-                                                <a class="btn btn-success enabled" href="users/update">
+                                                </button>
+                                            </form>
+                                              
+                                            <form class="form-horizontal" method="POST" action="./users/update" style = "padding: 2px">
+                                                <button type = "submit" class="btn btn-success enabled" >
+                                                    <input type="hidden" id="id" name="id" value="${user.id}">
                                                     <i class="fa fa-edit"></i>
-                                                </a>
+                                                </button>
+                                            </form>
 
+                                            <form class="form-horizontal" method="POST" action="./users" style = "padding: 2px">
                                                 <button type = "submit" class="btn btn-danger enabled">
                                                     <input type="hidden" id="id" name="id" value="${user.id}">
                                                     <i class="fa fa-trash"></i>

@@ -1,4 +1,6 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <%@include file="/WEB-INF/views/common/head.jsp"%>
@@ -30,17 +32,18 @@
                         <!-- action indique � quel "cible" sera envoyr la requ�te, ici notre Servlet qui sera bind sur -->
                         <!-- /vehicles/create -->
                         <form class="form-horizontal" method="post" action="/vehicles/create">
-                            <div class="form-group">
-                                <label for="owner" class="col-sm-2 control-label">Propriétaire</label>
-
-                                <div class="col-sm-10">
-                                    <select class="form-control" id="owner" name="owner">
-                                        <option value="1">John Doe</option>
-                                        <option value="2">Jane Doe</option>
-                                    </select>
-                                </div>
-                            </div>
+                            
                             <div class="box-body">
+                                <div class="form-group">
+                                    <label for="owner" class="col-sm-2 control-label">Propriétaire</label>
+    
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="owner" name="owner">
+                                            <option value="1">John Doe</option>
+                                            <option value="2">Jane Doe</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="manufacturer" class="col-sm-2 control-label">Marque</label>
 

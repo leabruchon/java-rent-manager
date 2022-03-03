@@ -1,4 +1,6 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"%>
+<%@page pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <%@include file="/WEB-INF/views/common/head.jsp"%>
@@ -28,17 +30,20 @@
                             <table class="table table-striped">
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Marque</th>
-                                    <th>Nombre de places</th>
                                     <!--<th>Propriétaire</th>-->
+                                    <th>Constructeur</th>
+                                    <!--<th>Modèle</th>-->
+                                    <th>Nombre de places</th>
                                     <th>Action</th>
                                 </tr>
                                
 
                                 <c:forEach  var="vehicle" items="${cars}">
                                     <tr>
-                                        <td>${vehicle.id}.</td>
+                                        <td>${vehicle.id}</td>
+                                        <!--<td>1</td>-->
                                         <td>${vehicle.constructeur}</td>
+                                        <!--<td>Picanto</td>-->
                                         <td>${vehicle.nb_place}</td>
                                         <td>
                                             <a class="btn btn-primary disabled" href="car-detail.html">

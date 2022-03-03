@@ -2,17 +2,17 @@ package com.epf.rentmanager.model;
 
 public class Vehicle {
     private int id;
-    private int id_proprietaire;
+    //private int id_proprietaire;
     private String constructeur;
-    private String modele;
+    //private String modele;
     private byte nb_place;
 
 
-    public Vehicle(int id, int id_proprietaire, String constructeur, String modele, byte nb_place) {
+    public Vehicle(int id, /*int id_proprietaire, */String constructeur, /*String modele,*/ byte nb_place) {
         this.id = id;
-        this.id_proprietaire = id_proprietaire;
+        //this.id_proprietaire = id_proprietaire;
         this.constructeur = constructeur;
-        this.modele = modele;
+        //this.modele = modele;
         this.nb_place = nb_place;
     }
 
@@ -20,9 +20,10 @@ public class Vehicle {
         return this.id;
     }
     
+    /*
     public int getProprietaire() {
         return this.id_proprietaire;
-    }
+    }*/
 
     public String getConstructeur() {
         return this.constructeur;
@@ -32,13 +33,14 @@ public class Vehicle {
         this.constructeur = constructeur;
     }
     
+    /*
     public String getModele() {
         return this.modele;
     }
 
     public void setModele(String modele) {
         this.modele = modele;
-    }
+    }*/
 
 
     public byte getNb_place() {
@@ -64,7 +66,7 @@ public class Vehicle {
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", constructeur='" + getConstructeur() + "'" + getModele() + "" +
+            ", constructeur='" + getConstructeur() + "'" + /*getModele() + "" +*/
             ", nb_place='" + getNb_place() + "'" +
             "}";
     }

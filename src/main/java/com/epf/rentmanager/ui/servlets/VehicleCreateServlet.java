@@ -44,6 +44,7 @@ public class VehicleCreateServlet extends HttpServlet{
 		
 	}
 	
+	/*
 	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -54,5 +55,5 @@ public class VehicleCreateServlet extends HttpServlet{
 		            e.printStackTrace();
 		        }
         doGet(request, response);
-    }
+    }*/
 }

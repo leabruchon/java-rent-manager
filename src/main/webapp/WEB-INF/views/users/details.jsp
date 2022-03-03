@@ -1,4 +1,6 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@page pageEncoding="UTF-8" %> 
+
 <!DOCTYPE html>
 <html>
 <%@include file="/WEB-INF/views/common/head.jsp"%>
@@ -20,7 +22,7 @@
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <h3 class="profile-username text-center">John Doe (john.doe@epf.fr)</h3>
+                            <h3 class="profile-username text-center">${user.prenom} ${user.nom} (${user.email})</h3>
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">

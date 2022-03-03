@@ -19,12 +19,12 @@ import com.epf.rentmanager.persistence.ConnectionManager;
 @Repository
 public class VehicleDao {
 	
-	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(id_proprietaire, constructeur, modele, nb_places) VALUES(?, ?, ?, ?);";
+	//private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(id_proprietaire, constructeur, modele, nb_places) VALUES(?, ?, ?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
-	private static final String FIND_VEHICLE_QUERY = "SELECT id, id_proprietaire, constructeur, modele,  nb_places FROM Vehicle WHERE id=?;";
-	private static final String FIND_VEHICLES_QUERY = "SELECT id, id_proprietaire, constructeur, modele, nb_places FROM Vehicle;";
+	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur,,  nb_places FROM Vehicle WHERE id=?;";
+	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places FROM Vehicle;";
 	
-	
+	/*
 	public long create(Vehicle vehicle) throws DaoException {
 		long up = 0;
 		
@@ -42,7 +42,7 @@ public class VehicleDao {
 			e.printStackTrace();
 		}
 		return up;
-	}
+	}*/
 
 	
 	public long delete(Vehicle vehicle) throws DaoException {
@@ -80,7 +80,7 @@ public class VehicleDao {
 				Byte vehicleNbPlaces = rs.getByte("nb_place");
 				
 				Vehicle vehicle = new Vehicle(
-						vehicleId, vehicleIdProprietaire, vehicleConstructeur,vehicleModele, vehicleNbPlaces);
+						vehicleId, /*vehicleIdProprietaire,*/ vehicleConstructeur,/*vehicleModele,*/ vehicleNbPlaces);
 				
 				
 				return Optional.of(vehicle);
@@ -103,13 +103,13 @@ public class VehicleDao {
 				
 				while(rs.next()) {
 					int vehicleId = rs.getInt("id");
-					int vehicleIdProprietaire = rs.getInt("id_proprietaire");
+					//int vehicleIdProprietaire = rs.getInt("id_proprietaire");
 					String constructeur = rs.getString("constructeur");
-					String modele = rs.getString("modele");
+					//String modele = rs.getString("modele");
 					byte nombrePlaces = rs.getByte("nb_places");
 					
 					Vehicle vehicle = new Vehicle(
-							vehicleId, vehicleIdProprietaire, constructeur, modele, nombrePlaces );
+							vehicleId, /*vehicleIdProprietaire,*/ constructeur,/* modele, */nombrePlaces );
 					vehicleList.add(vehicle);
 				}
 		

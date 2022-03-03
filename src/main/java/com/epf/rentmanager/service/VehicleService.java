@@ -22,6 +22,7 @@ public class VehicleService {
 		this.vehicleDao = vehicleDao;
 	}
 	
+	/*
 	public long create(Vehicle vehicle) throws ServiceException {
 		// TODO: créer un véhicule
 		try {
@@ -31,7 +32,7 @@ public class VehicleService {
 			e.printStackTrace();
 		}
 		return 0;
-	}
+	}*/
 
 	public Vehicle findById(int id) throws ServiceException {
 		// TODO: récupérer un véhicule par son id

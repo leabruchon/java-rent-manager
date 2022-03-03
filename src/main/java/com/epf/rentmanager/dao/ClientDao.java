@@ -82,14 +82,14 @@ public class ClientDao {
 			
 			rs.next();
 			
-			int clientId = rs.getInt(id);
+			//int clientId = rs.getInt(id);
 			String clientLastName = rs.getString("nom");
 			String clientFirstName = rs.getString("prenom");
 			String clientEmail = rs.getString("email");
 			LocalDate clientBirthDate = rs.getDate("naissance").toLocalDate();
 			
 			Client client = new Client(
-					clientId, clientLastName,clientFirstName, clientEmail,clientBirthDate );
+					id, clientLastName,clientFirstName, clientEmail,clientBirthDate );
 			
 			
 			return Optional.of(client);
