@@ -37,12 +37,8 @@ public class ClientDetailsServlet extends HttpServlet{
 			
 			try {
 				Optional<Client> client = Optional.of(clientService.findById(Integer.parseInt(request.getParameter("id"))));
-				System.out.println("client : " + client);
 				request.setAttribute("user", client.get());
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ServiceException e) {
+			}  catch (ServiceException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}

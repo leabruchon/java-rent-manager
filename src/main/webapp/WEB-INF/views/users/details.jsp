@@ -69,9 +69,12 @@
                                     </table>
                                 </div>
                             </div>
+
+                            
                             <!-- /.tab-pane -->
                             <div class="tab-pane" id="cars">
                                 <!-- /.box-header -->
+                                <!--
                                 <div class="box-body no-padding">
                                     <table class="table table-striped">
                                         <tr>
@@ -100,7 +103,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- /.tab-pane -->
                         </div>
                         <!-- /.tab-content -->

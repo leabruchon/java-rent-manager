@@ -45,16 +45,24 @@
                                         <td>${vehicle.constructeur}</td>
                                         <!--<td>Picanto</td>-->
                                         <td>${vehicle.nb_place}</td>
-                                        <td>
-                                            <a class="btn btn-primary disabled" href="car-detail.html">
-                                                <i class="fa fa-play"></i>
-                                            </a>
-                                            <a class="btn btn-success disabled" href="#">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                            <a class="btn btn-danger enabled" href="#">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
+                                        <td style = "display: flex; flex-direction: row;">
+                                              
+                                            <!--
+                                            <form class="form-horizontal" method="POST" action="./users/update" style = "padding: 2px">
+                                                <button type = "submit" class="btn btn-success enabled" >
+                                                    <input type="hidden" id="id" name="id" value="${user.id}">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                            </form> -->
+
+                                            <form class="form-horizontal" method="POST" action="./cars" style = "padding: 2px">
+                                                <button type = "submit" class="btn btn-danger enabled">
+                                                    <input type="hidden" id="id" name="id" value="${vehicle.id}">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                            
+                                        </td> 
                                         </td> 
                                     </tr>
                                 </c:forEach>

@@ -56,6 +56,20 @@ public class ClientService {
 		
 		return null;
 	}
+	
+	public long updateById(Client client) throws ServiceException {
+		// TODO: récupérer un client par son id
+		
+		try {
+			return this.clientDao.updateById(client);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
 
 	
 	public List<Client> findAll() throws ServiceException {

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.epf.rentmanager.exception.ServiceException;
+import com.epf.rentmanager.model.Client;
 import com.epf.rentmanager.model.Vehicle;
 import com.epf.rentmanager.service.VehicleService;
 
@@ -43,4 +44,19 @@ public class VehicleListServlet extends HttpServlet{
 
 			request.getRequestDispatcher("./WEB-INF/views/vehicles/list.jsp").forward(request, response);
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		
+			Vehicle vehicle = new Vehicle(Integer.parseInt(request.getParameter("id")), null, null, (byte) 0);
+			try {
+				vehicleService.delete(vehicle);
+			} catch (ServiceException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+                
+        doGet(request, response);
+    }
 }

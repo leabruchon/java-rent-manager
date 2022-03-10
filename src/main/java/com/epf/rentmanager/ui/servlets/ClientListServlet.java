@@ -46,6 +46,7 @@ public class ClientListServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+		
 			Client client = new Client(Integer.parseInt(request.getParameter("id")), ""  ,"" ,"",null );
 			try {
 				clientService.delete(client);
@@ -53,7 +54,6 @@ public class ClientListServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println();
 			
                 
         doGet(request, response);
