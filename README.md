@@ -8,12 +8,14 @@ L'application Rent Manager permet de gérer les véhicules de votre établisseme
 
 ## Client
 
--[x] Ajouter un client / Supprimer un client
--[ ]
+* Ajouter un client / Supprimer un client
+* 
 
-## Voitures 
+## Véhicules 
 
 *  Ajouter un véhicule / Supprimer un véhicule
 
 
 ## Réservations
+
+* Ajouter une réservation
