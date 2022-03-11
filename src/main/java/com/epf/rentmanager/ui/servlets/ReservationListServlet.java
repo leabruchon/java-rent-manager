@@ -36,6 +36,7 @@ public class ReservationListServlet  extends HttpServlet{
 		
 			try {
 				ArrayList<Reservation> reservationList = (ArrayList<Reservation>) reservationService.findAll();
+				System.out.println(reservationList);
 	            request.setAttribute("rents", reservationList);
 				//request.setAttribute("ClientListServlet", this.clientService.findAll());
 			} catch (ServiceException e) {
@@ -45,4 +46,19 @@ public class ReservationListServlet  extends HttpServlet{
 
 			request.getRequestDispatcher("./WEB-INF/views/rents/list.jsp").forward(request, response);
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+		
+			Reservation reservation = new Reservation(Integer.parseInt(request.getParameter("id")), 0, 0, null, null );
+			try {
+				reservationService.delete(reservation);
+			} catch (ServiceException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+                
+        doGet(request, response);
+    }
 }

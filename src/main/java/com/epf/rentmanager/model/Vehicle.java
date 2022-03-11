@@ -4,10 +4,10 @@ public class Vehicle {
     private int id;
     private String constructeur;
     private String modele;
-    private byte nb_place;
+    private int nb_place;
 
 
-    public Vehicle(int id,String constructeur, String modele, byte nb_place) {
+    public Vehicle(int id,String constructeur, String modele, int nb_place) {
         this.id = id;
         this.constructeur = constructeur;
         this.modele = modele;
@@ -34,11 +34,11 @@ public class Vehicle {
         this.modele = modele;
     }
 
-    public byte getNb_place() {
+    public int getNb_place() {
         return this.nb_place;
     }
 
-    public void setNb_place(byte nb_place) {
+    public void setNb_place(int nb_place) {
         this.nb_place = nb_place;
     }
 

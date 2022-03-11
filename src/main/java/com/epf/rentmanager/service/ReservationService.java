@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import com.epf.rentmanager.dao.ReservationDao;
 import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
+import com.epf.rentmanager.model.Client;
 import com.epf.rentmanager.model.Reservation;
+import com.epf.rentmanager.model.Vehicle;
 
 @Service
 public class ReservationService {
@@ -18,10 +20,29 @@ public class ReservationService {
 		this.reservationDao = reservationDao;
 	}
 	
-	/*public long create(Vehicle vehicle) throws ServiceException {
+	public long create(Reservation reservation) throws ServiceException {
 		// TODO: créer un véhicule
-		
+		try {
+			return this.reservationDao.create(reservation);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
 	}
+	
+	public long delete(Reservation reservation) throws ServiceException{
+		// TODO: créer un client
+		try {
+			return this.reservationDao.delete(reservation);
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	/*
 
 	public Vehicle findById(long id) throws ServiceException {
 		// TODO: récupérer un véhicule par son id

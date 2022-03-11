@@ -83,4 +83,11 @@ public class ClientService {
 		return null;
 	}
 	
+	
+	public int count() throws ServiceException{
+		
+		return this.clientDao.count();
+	}
+	
+	
 }

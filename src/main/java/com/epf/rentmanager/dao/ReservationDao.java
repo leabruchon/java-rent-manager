@@ -49,12 +49,26 @@ public class ReservationDao {
 		return up; // renvoie 1 si le client est ajouté à la base
 	}
 	
-	/*
+	
 	
 	public long delete(Reservation reservation) throws DaoException {
+		long up = 0;
 		
+		try(Connection conn = ConnectionManager.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(DELETE_RESERVATION_QUERY);) {
+			
+			pstmt.setInt(1, reservation.getId());
+			up = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		
+		}
+		return up;
 	}
 
+	/*
 	
 	public List<Reservation> findResaByClientId(long clientId) throws DaoException {
 		

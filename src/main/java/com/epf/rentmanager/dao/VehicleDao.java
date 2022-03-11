@@ -21,8 +21,8 @@ public class VehicleDao {
 	
 	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, modele, nb_places) VALUES( ?, ?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
-	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur,,  nb_places FROM Vehicle WHERE id=?;";
-	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places FROM Vehicle;";
+	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, modele,  nb_places FROM Vehicle WHERE id=?;";
+	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, modele, nb_places FROM Vehicle;";
 	
 	
 	public long create(Vehicle vehicle) throws DaoException {
@@ -33,7 +33,8 @@ public class VehicleDao {
 			
 			pstmt.setString(1, vehicle.getConstructeur());
 			pstmt.setString(2, vehicle.getModele());
-			pstmt.setByte(3, vehicle.getNb_place());
+			pstmt.setInt(3, vehicle.getNb_place());
+			
 			up = pstmt.executeUpdate();
 			
 		} catch (SQLException e) {

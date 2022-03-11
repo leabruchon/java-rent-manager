@@ -32,7 +32,7 @@
                                     <th style="width: 10px">#</th>
                                     <!--<th>Propriétaire</th>-->
                                     <th>Constructeur</th>
-                                    <!--<th>Modèle</th>-->
+                                    <th>Modèle</th>
                                     <th>Nombre de places</th>
                                     <th>Action</th>
                                 </tr>
@@ -41,9 +41,8 @@
                                 <c:forEach  var="vehicle" items="${cars}">
                                     <tr>
                                         <td>${vehicle.id}</td>
-                                        <!--<td>1</td>-->
                                         <td>${vehicle.constructeur}</td>
-                                        <!--<td>Picanto</td>-->
+                                        <td>${vehicle.modele}</td>
                                         <td>${vehicle.nb_place}</td>
                                         <td style = "display: flex; flex-direction: row;">
                                               

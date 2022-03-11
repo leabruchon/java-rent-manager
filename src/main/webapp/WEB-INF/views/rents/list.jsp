@@ -41,17 +41,15 @@
                                         <td>${rent.vehicule_id}</td>
                                         <td>${rent.debut}</td>
                                         <td>${rent.fin}</td>
-                                        <!--<td>
-                                            <a class="btn btn-primary disabled" href="car-detail.html">
-                                                <i class="fa fa-play"></i>
-                                            </a>
-                                            <a class="btn btn-success disabled" href="#">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                            <a class="btn btn-danger disabled" href="#">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </td> -->
+                                        <td style = "display: flex; flex-direction: row;">
+                                            <form class="form-horizontal" method="POST" action="./rents" style = "padding: 2px">
+                                                <button type = "submit" class="btn btn-danger enabled">
+                                                    <input type="hidden" id="id" name="id" value="${rent.id}">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                        
                                     </tr>
                                 </c:forEach>
                             </table>

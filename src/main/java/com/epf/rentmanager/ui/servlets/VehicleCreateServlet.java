@@ -44,16 +44,19 @@ public class VehicleCreateServlet extends HttpServlet{
 		
 	}
 	
-	/*
+	
 	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-				Vehicle vehicle = new Vehicle(0, request.getParameter("owner"), request.getParameter("manufacturer"),request.getParameter("modele"),request.getParameter("seats"));
-		        try {
-		        	vehicleService.create(vehicle);
-		        } catch (ServiceException e) {
-		            e.printStackTrace();
-		        }
+		
+		Vehicle vehicle = new Vehicle(0, request.getParameter("manufacturer"), request.getParameter("modele"), Integer.parseInt(request.getParameter("seats")));
+		
+		try {
+                	vehicleService.create(vehicle);
+                } catch (ServiceException e) {
+                    e.printStackTrace();
+                }
+                
         doGet(request, response);
-    }*/
+    }
 }

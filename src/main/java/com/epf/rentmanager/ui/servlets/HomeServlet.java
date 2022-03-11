@@ -12,19 +12,39 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+
+import com.epf.rentmanager.exception.ServiceException;
+import com.epf.rentmanager.service.ClientService;
+
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet{
+	
+	@Autowired
+	ClientService clientService; 
+	@Override
+	public void init() throws ServletException {
+	super.init();
+	SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
+	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse
 			response) throws ServletException, IOException {
 			// TODO
-
-			request.getRequestDispatcher("./WEB-INF/views/home.jsp").forward(request, response);
+			try {
+				System.out.println("nb clients :" + clientService.count());
+			} catch (ServiceException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//clientService.count();
+			//request.setAttribute("user", client.get());
 		
-		/*
-		PrintWriter out = response.getWriter();
-        out.println("Sum is: " + 1);
-        out.println("Average is: " + 1);*/
+			request.getRequestDispatcher("./WEB-INF/views/home.jsp").forward(request, response);
+			
+			
+		
 	}
 
 }

@@ -20,7 +20,7 @@ import com.epf.rentmanager.service.ClientService;
 @WebServlet("/users/update")
 public class ClientUpdateServlet extends HttpServlet{
 	@Autowired
-	ClientService clientService;
+	ClientService clientService; 
 	@Override
 	public void init() throws ServletException {
 	super.init();
@@ -48,22 +48,23 @@ public class ClientUpdateServlet extends HttpServlet{
 	
 	@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, NullPointerException {
 
+	        if(request.getParameter("naissance") != null) {
+	        	try {
+		        	
+		        	System.out.println(request.getParameter("last_name"));
+		        	//Optional<Client> client = Optional.of(clientService.findById(Integer.parseInt(request.getParameter("id"))));
+			
+		        	Client client = new Client(Integer.parseInt(request.getParameter("id")), request.getParameter("last_name"),request.getParameter("first_name"),request.getParameter("email"), LocalDate.parse(request.getParameter("naissance")));
+					clientService.updateById(client);
+					
+				}  catch (ServiceException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	        }
 	        
-	        try {
-	        	
-	        	System.out.println(request.getParameter("last_name"));
-	        	System.out.println(LocalDate.parse(request.getParameter("naissance")));
-	        	//Optional<Client> client = Optional.of(clientService.findById(Integer.parseInt(request.getParameter("id"))));
-		
-	        	Client client = new Client(Integer.parseInt(request.getParameter("id")), request.getParameter("last_name"),request.getParameter("first_name"),request.getParameter("email"), LocalDate.parse(request.getParameter("naissance")));
-				clientService.updateById(client);
-				
-			}  catch (ServiceException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 	        
 	        
 	        doGet(request, response);

@@ -31,6 +31,10 @@ public class ClientCreateServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse
 			response) throws ServletException, IOException {
 			// TODO
+		
+			
+			request.setAttribute("dateMin", LocalDate.now().minusYears(90));
+			request.setAttribute("dateMax", LocalDate.now().minusYears(18));
 
 			request.getRequestDispatcher("../WEB-INF/views/users/create.jsp").forward(request, response);
 	}
@@ -38,13 +42,13 @@ public class ClientCreateServlet extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                Client client = new Client(0, request.getParameter("last_name"),request.getParameter("first_name"),request.getParameter("email"), LocalDate.parse(request.getParameter("naissance")));
-                try {
-                	clientService.create(client);
-                } catch (ServiceException e) {
-                    e.printStackTrace();
-                }
                 
-        doGet(request, response);
+		Client client = new Client(0, request.getParameter("last_name"),request.getParameter("first_name"),request.getParameter("email"), LocalDate.parse(request.getParameter("naissance")));
+        try {
+        	clientService.create(client);
+            } catch (ServiceException e) {
+            	e.printStackTrace();
+            }
+               doGet(request, response);
     }
 }
