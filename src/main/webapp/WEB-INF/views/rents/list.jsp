@@ -28,8 +28,8 @@
                             <table class="table table-striped">
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Voiture</th>
                                     <th>Client</th>
+                                    <th>Voiture</th>
                                     <th>Debut</th>
                                     <th>Fin</th>
                                     <th>Action</th>

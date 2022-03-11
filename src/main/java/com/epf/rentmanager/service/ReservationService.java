@@ -40,12 +40,35 @@ public class ReservationService {
 		return 0;
 	}
 	
-	/*
+	
 
-	public Vehicle findById(long id) throws ServiceException {
+	public List<Reservation> findById(int id) throws ServiceException {
 		// TODO: récupérer un véhicule par son id
+			
+			try {
+				return this.reservationDao.findResaByClientId(id);
+			} catch (DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return null;
 		
-	}*/
+	}
+	
+	public List<Reservation> findVehicleById(int id) throws ServiceException {
+		// TODO: récupérer un véhicule par son id
+			
+			try {
+				return this.reservationDao.findResaByVehicleId(id);
+			} catch (DaoException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return null;
+		
+	}
 
 	public List<Reservation> findAll() throws ServiceException {
 		// TODO: récupérer tous les clients

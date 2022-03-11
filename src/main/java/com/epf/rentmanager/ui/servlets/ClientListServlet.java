@@ -2,6 +2,7 @@ package com.epf.rentmanager.ui.servlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,13 +15,17 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Client;
+import com.epf.rentmanager.model.Reservation;
 import com.epf.rentmanager.service.ClientService;
+import com.epf.rentmanager.service.ReservationService;
 
 @WebServlet("/users")
 public class ClientListServlet extends HttpServlet {
 
 	@Autowired
 	ClientService clientService;
+	@Autowired
+	ReservationService reservationService;
 	@Override
 	public void init() throws ServletException {
 	super.init();
@@ -48,7 +53,17 @@ public class ClientListServlet extends HttpServlet {
 		
 			Client client = new Client(Integer.parseInt(request.getParameter("id")), ""  ,"" ,"",null );
 			try {
+				
+				List<Reservation> reservation = reservationService.findById(Integer.parseInt(request.getParameter("id")));
+
+				for(int i = 0; i<reservation.size();i++){
+					reservationService.delete(reservation.get(i));
+					
+				}
+				
 				clientService.delete(client);
+
+				
 			} catch (ServiceException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

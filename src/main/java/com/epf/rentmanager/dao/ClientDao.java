@@ -108,7 +108,6 @@ public class ClientDao {
 			
 			rs.next();
 			
-			//int clientId = rs.getInt(id);
 			String clientLastName = rs.getString("nom");
 			String clientFirstName = rs.getString("prenom");
 			String clientEmail = rs.getString("email");

@@ -28,9 +28,7 @@
                                 <li class="list-group-item">
                                     <b>Reservation(s)</b> <a class="pull-right">2</a>
                                 </li>
-                                <li class="list-group-item">
-                                    <b>Voiture(s)</b> <a class="pull-right">3</a>
-                                </li>
+                                
                             </ul>
                         </div>
                         <!-- /.box-body -->
@@ -42,7 +40,7 @@
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#rents" data-toggle="tab">Reservations</a></li>
-                            <li><a href="#cars" data-toggle="tab">Voitures</a></li>
+                           
                         </ul>
                         <div class="tab-content">
                             <div class="active tab-pane" id="rents">
@@ -103,7 +101,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                            </div> -->
+                            </div> 
                             <!-- /.tab-pane -->
                         </div>
                         <!-- /.tab-content -->

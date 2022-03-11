@@ -66,15 +66,64 @@ public class ReservationDao {
 		return up;
 	}
 
-	/*
 	
-	public List<Reservation> findResaByClientId(long clientId) throws DaoException {
+	public List<Reservation> findResaByClientId(int clientId) throws DaoException {
 		
+		List<Reservation> reservationList = new ArrayList<>(); 
+		try(Connection conn = ConnectionManager.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(FIND_RESERVATIONS_BY_CLIENT_QUERY);) {
+				
+			pstmt.setInt(1,clientId);
+			ResultSet rs = pstmt.executeQuery();
+			
+			rs.next();
+			
+			int id = rs.getInt("id");
+			int vehicleId = rs.getInt("vehicle_id");
+			LocalDate debut = rs.getDate("debut").toLocalDate();
+			LocalDate fin = rs.getDate("fin").toLocalDate();
+			
+			Reservation reservation = new Reservation(
+					id,clientId ,vehicleId, debut, fin );
+			
+			reservationList.add(reservation);
+			
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			
+			}
+		return reservationList;
 	}
 	
-	public List<Reservation> findResaByVehicleId(long vehicleId) throws DaoException {
-		 
-	}*/
+	
+	public List<Reservation> findResaByVehicleId(int vehicleId) throws DaoException {
+		List<Reservation> reservationList = new ArrayList<>(); 
+		try(Connection conn = ConnectionManager.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(FIND_RESERVATIONS_BY_VEHICLE_QUERY);) {
+				
+			pstmt.setInt(1,vehicleId);
+			ResultSet rs = pstmt.executeQuery();
+			
+			rs.next();
+			
+			int id = rs.getInt("id");
+			int clientId = rs.getInt("client_id");
+			LocalDate debut = rs.getDate("debut").toLocalDate();
+			LocalDate fin = rs.getDate("fin").toLocalDate();
+			
+			Reservation reservation = new Reservation(
+					id,clientId ,vehicleId, debut, fin );
+			
+			reservationList.add(reservation);
+			
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			
+			}
+		return reservationList;
+	}
 
 	public List<Reservation> findAll() throws DaoException {
 		List<Reservation> reservationList = new ArrayList<>(); 
