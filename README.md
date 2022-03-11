@@ -18,16 +18,17 @@ Voici la liste des fonctionnalités proposées par l'application.
   * Nom et prénom doivent faire au minimum 3 charactères
   * Client doit avoir plus de 18 ans et moins de 90 ans
 * Modifier les informations d'un client
+  * Les informations actuelles sont récupérées puis peuvent être modifiées
 * Consulter les détails d'un client : toutes les réservations qui ont été faites par ce dernier
 * Supprimer un client
   * on supprime alors la/les réservations associées à ce client
 
 ## Véhicules 
 
-*  Ajouter un véhicule
-  * Tous les champs sont requis
-* Un véhicule peut avoir 2 places au minimum et 9 places au maximum
-*  Supprimer un véhicule
+* Ajouter un véhicule
+  * Tous les champs doivent être remplis
+  * Un véhicule peut avoir 2 places au minimum et 9 places au maximum
+* Supprimer un véhicule
   * on supprime alors la/les réservations associées à ce véhicule
 
 
