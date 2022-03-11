@@ -33,7 +33,7 @@
                                     <label for="last_name" class="col-sm-2 control-label">Nom</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="last_name" name="last_name" value=${user.nom}>
+                                        <input type="text" class="form-control" id="last_name" name="last_name" value=${user.nom} required>
                                         <input type="hidden" class="form-control" id="id" name="id" value=${user.id}>
                                     </div>
                                 </div>
@@ -41,21 +41,21 @@
                                     <label for="first_name" class="col-sm-2 control-label">Prenom</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="first_name" name="first_name" value = ${user.prenom}>
+                                        <input type="text" class="form-control" id="first_name" name="first_name" value = ${user.prenom} required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-sm-2 control-label">Email</label>
 
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" name="email" value=${user.email}>
+                                        <input type="email" class="form-control" id="email" name="email" value=${user.email} required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="naissance" class="col-sm-2 control-label">Date de naissance</label>
 
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="naissance" name="naissance" value=${user.naissance}>
+                                        <input type="date" class="form-control" id="naissance" name="naissance" value=${user.naissance} required>
                                     </div>
                                 </div>
                             </div>

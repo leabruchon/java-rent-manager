@@ -26,7 +26,7 @@
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
-                                    <b>Reservation(s)</b> <a class="pull-right">2</a>
+                                    <b>${user.naissance}</b> <a class="pull-right"></a>
                                 </li>
                                 
                             </ul>
@@ -52,18 +52,14 @@
                                             <th>Date de debut</th>
                                             <th>Date de fin</th>
                                         </tr>
-                                        <tr>
-                                            <td>3.</td>
-                                            <td>Renault Megane</td>
-                                            <td>10/01/2018</td>
-                                            <td>12/01/2018</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7.</td>
-                                            <td>Peugeot 207</td>
-                                            <td>10/01/2018</td>
-                                            <td>12/01/2018</td>
-                                        </tr>
+                                        <c:forEach  var="rent" items="${rents}">
+                                             <tr>
+                                                <td>${rent.id}.</td>
+                                                <td>${rent.vehicule_id}</td>
+                                                <td>${rent.debut}</td>
+                                                <td>${rent.fin}</td> 
+                                            </tr>
+                                        </c:forEach>  
                                     </table>
                                 </div>
                             </div>

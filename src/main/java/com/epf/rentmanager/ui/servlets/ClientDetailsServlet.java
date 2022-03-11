@@ -46,11 +46,11 @@ public class ClientDetailsServlet extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			List<Reservation> reservation;
+		
 			try {
-				reservation = reservationService.findById(Integer.parseInt(request.getParameter("id")));
-				System.out.println("reservation ici : " + reservation);
+				List<Reservation> reservation = reservationService.findById(Integer.parseInt(request.getParameter("id")));
+				request.setAttribute("rents", reservation);
+				
 			} catch (NumberFormatException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -58,11 +58,7 @@ public class ClientDetailsServlet extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			
 
-			
-			
 			request.getRequestDispatcher("../WEB-INF/views/users/details.jsp").forward(request, response);
 	}
 	
