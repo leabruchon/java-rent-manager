@@ -6,7 +6,7 @@ To run the project : `mvn tomcat7:run`
 
 L'application Rent Manager permet de gérer les véhicules de votre établissement pour leur mise en location. 
 
-## Client
+## Accueil
 
 * Consulter le nombre d'utilisateurs, de véhicules et de réservations
 
