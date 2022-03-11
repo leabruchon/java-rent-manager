@@ -16,6 +16,7 @@ L'application Rent Manager permet de gérer les véhicules de votre établisseme
   * Tous les champs doivent être remplis (nom, prénom, email, date de naissance)
   * Nom et prénom doivent faire au minimum 3 charactères
   * Client doit avoir plus de 18 ans et moins de 90 ans
+* Modifier les informations d'un client
 * Supprimer un client
 
 ## Véhicules 
