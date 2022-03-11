@@ -18,6 +18,7 @@ L'application Rent Manager permet de gérer les véhicules de votre établisseme
   * Client doit avoir plus de 18 ans et moins de 90 ans
 * Modifier les informations d'un client
 * Supprimer un client
+ * on supprime alors la/les réservations associées à ce client
 
 ## Véhicules 
 
@@ -30,3 +31,4 @@ L'application Rent Manager permet de gérer les véhicules de votre établisseme
 ## Réservations
 
 * Ajouter une réservation
+* Supprimer une réservation
