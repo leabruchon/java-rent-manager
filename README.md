@@ -21,7 +21,10 @@ L'application Rent Manager permet de gérer les véhicules de votre établisseme
 
 ## Véhicules 
 
-*  Ajouter un véhicule / Supprimer un véhicule
+*  Ajouter un véhicule
+ *  Tous les champs sont requis
+ *  Un véhicule peut avoir 2 places au minimum et 9 places au maximum
+*  Supprimer un véhicule
 
 
 ## Réservations
