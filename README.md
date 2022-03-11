@@ -26,7 +26,7 @@ Voici la liste des fonctionnalités proposées par l'application.
 
 *  Ajouter un véhicule
   * Tous les champs sont requis
-  * Un véhicule peut avoir 2 places au minimum et 9 places au maximum
+* Un véhicule peut avoir 2 places au minimum et 9 places au maximum
 *  Supprimer un véhicule
   * on supprime alors la/les réservations associées à ce véhicule
 
@@ -34,4 +34,5 @@ Voici la liste des fonctionnalités proposées par l'application.
 ## Réservations
 
 * Ajouter une réservation
+  * Tous les champs sont requis
 * Supprimer une réservation
