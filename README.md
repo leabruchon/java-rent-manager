@@ -10,7 +10,7 @@ L'application Rent Manager permet de gérer les véhicules de votre établisseme
 
 * Ajouter un client 
   * Tous les champs doivent être remplis (nom, prénom, email, date de naissance)
-  * Client doit avoir plus de 18 ans
+  * Client doit avoir plus de 18 ans et moins de 90 ans
 * Supprimer un client
 
 ## Véhicules 
