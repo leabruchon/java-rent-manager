@@ -26,7 +26,7 @@ public class ClientDao {
 	private static final String FIND_CLIENT_QUERY = "SELECT id, nom, prenom, email, naissance FROM Client WHERE id=?;";
 	private static final String FIND_CLIENTS_QUERY = "SELECT id, nom, prenom, email, naissance FROM Client;";
 	private static final String UPDATE_CLIENT_QUERY = "UPDATE Client SET nom=?, prenom=?, email=?, naissance=? WHERE id=?;"; 
-	private static final String COUNT_CLIENTS_QUERY = "SELECT COUNT(*) FROM Client"; 
+	private static final String COUNT_CLIENTS_QUERY = "SELECT COUNT(id) AS count FROM Client;"; 
 
 	
 	public long create(Client client) throws DaoException {
@@ -46,8 +46,6 @@ public class ClientDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		
-		
 		}
 		return up;
 	}
@@ -69,7 +67,6 @@ public class ClientDao {
 			up = pstmt.executeUpdate();
 			
 			return up;
-			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -163,20 +160,18 @@ public class ClientDao {
 	
 	public int count(){
 		
-		
 		try(Connection conn = ConnectionManager.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(COUNT_CLIENTS_QUERY);) {
 				
-			ResultSet rs = pstmt.executeQuery();
-			//rs.next();
-			int nbClient = rs.getFetchSize(); 
+			ResultSet rs  = pstmt.executeQuery();
+			rs.next();
+			int nbClient = rs.getInt("count");
+		
 			return nbClient;
 			
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			
-			
 			}
 		return 0;
 	}

@@ -2,10 +2,6 @@ package com.epf.rentmanager.ui.servlets;
 
 import java.io.IOException;
 
-
-import java.io.PrintWriter;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,12 +13,22 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.service.ClientService;
+import com.epf.rentmanager.service.ReservationService;
+import com.epf.rentmanager.service.VehicleService;
 
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Autowired
 	ClientService clientService; 
+	@Autowired
+	ReservationService reservationService;
+	@Autowired
+	VehicleService vehicleService;
 	@Override
 	public void init() throws ServletException {
 	super.init();
@@ -33,14 +39,17 @@ public class HomeServlet extends HttpServlet{
 			response) throws ServletException, IOException {
 			// TODO
 			try {
-				System.out.println("nb clients :" + clientService.count());
+				
+				request.setAttribute("nbUsers", clientService.count());
+				request.setAttribute("nbRents", reservationService.count());
+				request.setAttribute("nbVehicles", vehicleService.count());
+				
 			} catch (ServiceException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//clientService.count();
-			//request.setAttribute("user", client.get());
-		
+			
+			
 			request.getRequestDispatcher("./WEB-INF/views/home.jsp").forward(request, response);
 			
 			
