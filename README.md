@@ -20,13 +20,13 @@ Voici la liste des fonctionnalités proposées par l'application.
 * Modifier les informations d'un client
 * Consulter les détails d'un client : toutes les réservations qui ont été faites par ce dernier
 * Supprimer un client
- * on supprime alors la/les réservations associées à ce client
+  * on supprime alors la/les réservations associées à ce client
 
 ## Véhicules 
 
 *  Ajouter un véhicule
-  *  Tous les champs sont requis
-  *  Un véhicule peut avoir 2 places au minimum et 9 places au maximum
+  * Tous les champs sont requis
+  * Un véhicule peut avoir 2 places au minimum et 9 places au maximum
 *  Supprimer un véhicule
   * on supprime alors la/les réservations associées à ce véhicule
 
